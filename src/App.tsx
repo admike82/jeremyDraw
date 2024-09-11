@@ -60,6 +60,7 @@ function App() {
 
   useEffect(() => {
     setDateValidate(["09/09/2024", "10/09/2024", "13/09/2024"]);
+    setEventlist([]);
   }, []);
 
   const messages = {
