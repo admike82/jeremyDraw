@@ -7,14 +7,17 @@ import OnLineLayout from "./component/Layout/OnLineLayout";
 import useDocumentTitle from "./hooks/useDocumentTitle";
 import { tradFR } from "./Tools/Calendar/tradFr";
 
-type event = {
+type view = "day" | "week" | "work_week" | "month" | "agenda";
+
+interface event {
   start: Date;
   end: Date;
   title: string;
-};
-type view = "day" | "week" | "work_week" | "month" | "agenda";
+}
 
-type SlotInfo = {
+type events = event[];
+
+interface SlotInfo {
   start: Date;
   end: Date;
   slots: Date[];
@@ -41,9 +44,7 @@ type SlotInfo = {
         clientY: number;
       }
     | undefined;
-};
-
-type events = event[];
+}
 
 function App() {
   useDocumentTitle("Go-up - Planning");
